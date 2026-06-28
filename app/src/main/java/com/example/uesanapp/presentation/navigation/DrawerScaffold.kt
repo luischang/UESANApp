@@ -72,6 +72,14 @@ fun DrawerScaffold(navController: NavController,
                         navController.navigate("football")
                     }
                 )
+                //Chat
+                NavigationDrawerItem(
+                    label = { Text("Chat") },
+                    selected = false,
+                    onClick = {
+                        navController.navigate("chat")
+                    }
+                )
                 //Logout
                 NavigationDrawerItem(
                     label = { Text("Logout") },

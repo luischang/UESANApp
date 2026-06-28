@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.uesanapp.presentation.apifootball.ApiFootballScreen
 import com.example.uesanapp.presentation.auth.LoginScreen
 import com.example.uesanapp.presentation.auth.RegisterScreen
+import com.example.uesanapp.presentation.chat.GeminiChatScreen
 import com.example.uesanapp.presentation.home.HomeScreen
 import com.example.uesanapp.presentation.permissions.GalleryPermissionsScreen
 
@@ -15,7 +16,7 @@ fun AppNavGraph(){
     val navController = rememberNavController()
 
     NavHost(navController = navController,
-            startDestination = "register"){
+            startDestination = "home"){
         composable("register"){ RegisterScreen(navController) }
         composable("login"){ LoginScreen(navController) }
         composable("home"){
@@ -31,6 +32,12 @@ fun AppNavGraph(){
         composable("football"){
             DrawerScaffold(navController) {
                 ApiFootballScreen()
+            }
+        }
+        //Chat
+        composable("chat"){
+            DrawerScaffold(navController) {
+                GeminiChatScreen("AIzaSyAWEay0xtYfipqTBvfgkoNyyldHSUt2uqQ")
             }
         }
     }
